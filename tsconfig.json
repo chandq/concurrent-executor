@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    /* 基础配置 */
+    "target": "esnext",
+    "module": "esnext",
+    "lib": ["dom", "esnext"],
+    "removeComments": false,
+    // "declaration": true,
+    // "sourceMap": true,
+    // "declarationMap": true,
+
+    /* 强类型检查配置 */
+    "strict": true,
+    "noImplicitAny": false,
+    "noImplicitThis": false,
+    "skipLibCheck": true,
+
+    /* 模块分析配置 */
+    "baseUrl": ".",
+    // "outDir": "lib",
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true
+  },
+
+  "typeRoots": ["./node_modules/@types/", "./types", "./node_modules"],
+  "include": ["src/**/*.ts", "test/**/*.ts", "types/**/*.d.ts"],
+  "exclude": ["node_modules/**/*"]
+}
