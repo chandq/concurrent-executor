@@ -1,7 +1,7 @@
 {
   "name": "concurrent-executor",
   "version": "1.0.0",
-  "description": "Utils function library for modern javascript",
+  "description": "A TypeScript concurrent task executor with timeout, retry, and execution control",
   "scripts": {
     "prepare": "husky install",
     "build": "rollup  --bundleConfigAsCjs --config rollup.config.js",
