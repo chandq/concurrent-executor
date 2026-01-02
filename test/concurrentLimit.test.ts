@@ -55,6 +55,29 @@ describe('concurrentLimit', () => {
     expect(results).toEqual([]);
   });
 
+  test('应该处理同步错误和异步错误', async () => {
+    const results = await concurrentLimit(
+      [
+        () => {
+          return new Promise((resolve, reject) => {
+            setTimeout(() => {
+              resolve('1');
+            }, 500);
+          });
+        },
+        () => {
+          throw new Error('sync error');
+        },
+        async () => {
+          return Promise.reject('async error');
+        },
+        () => 2
+      ],
+      2
+    );
+    expect(results.map(r => r.status)).toEqual(['fulfilled', 'rejected', 'rejected', 'fulfilled']);
+  });
+
   test('应该验证参数类型', async () => {
     await expect(concurrentLimit(null, 5)).rejects.toThrow('tasks must be an array of functions');
     await expect(concurrentLimit([], 'invalid')).rejects.toThrow('limit must be a positive number');

@@ -165,6 +165,10 @@ export class ConcurrentExecutor<T = unknown> {
 
   private onAllComplete?: ExecutorOptions<T>['onAllComplete'];
 
+  private finishedStatusMap = new Map<TaskStatus, boolean>(
+    (['success', 'error', 'timeout', 'stopped', 'cancelled'] as TaskStatus[]).map(status => [status, true])
+  );
+
   constructor(options: ExecutorOptions<T> = {}) {
     this.concurrency = isNumber(options.concurrency) ? options.concurrency : 5;
     this.autoStart = isBoolean(options.autoStart) ? options.autoStart : true;
@@ -321,8 +325,6 @@ export class ConcurrentExecutor<T = unknown> {
 
       if (this.isAllFinished()) {
         this.onAllComplete?.(this.snapshot());
-      } else {
-        this.schedule();
       }
     }
   }
@@ -350,7 +352,6 @@ export class ConcurrentExecutor<T = unknown> {
     // 防止外部误用
     Object.freeze(this.tasks);
     Object.freeze(this.results);
-
     // 清理回调引用
     this.onProgress = undefined;
     this.onTaskComplete = undefined;
@@ -380,7 +381,7 @@ export class ConcurrentExecutor<T = unknown> {
   }
 
   private isAllFinished() {
-    return this.tasks.every(t => ['success', 'error', 'timeout', 'stopped'].includes(t.status));
+    return this.tasks.every(t => this.finishedStatusMap.has(t.status));
   }
 
   public snapshot(): Snapshot<T> {
