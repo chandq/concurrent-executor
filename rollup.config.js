@@ -35,7 +35,7 @@ export default [
     output: {
       dir: 'dist/esm',
       format: 'es',
-      entryFileNames: '[name].js',
+      entryFileNames: '[name].mjs',
       preserveModules: true,
       preserveModulesRoot: 'src',
       exports: 'named',
@@ -69,7 +69,7 @@ export default [
     output: {
       dir: 'dist/cjs',
       format: 'cjs',
-      entryFileNames: '[name].js',
+      entryFileNames: '[name].cjs',
       preserveModules: true,
       preserveModulesRoot: 'src',
       exports: 'named',
