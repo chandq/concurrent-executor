@@ -1,6 +1,7 @@
 {
   "name": "concurrent-executor",
   "version": "1.0.2",
+  "author": "chandq",
   "description": "A TypeScript concurrent task executor with timeout, retry, and execution control",
   "scripts": {
     "prepare": "husky install",
@@ -21,10 +22,10 @@
   "jsdelivr": "dist/umd/index.min.js",
   "typesVersions": {
     "*": {
-      "./concurrentLimit": [
+      "concurrentLimit": [
         "./dist/types/concurrentLimit.d.ts"
       ],
-      "./concurrentExecutor": [
+      "concurrentExecutor": [
         "./dist/types/concurrentExecutor.d.ts"
       ]
     }
