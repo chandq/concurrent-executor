@@ -1,6 +1,6 @@
 {
   "name": "concurrent-executor",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "author": "chandq",
   "description": "A TypeScript concurrent task executor with timeout, retry, and execution control",
   "scripts": {
