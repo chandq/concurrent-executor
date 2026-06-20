@@ -22,7 +22,6 @@ async function concurrentLimit<T>(
       throw new Error(`task at index ${i} must be a function`);
     }
   }
-
   if (tasks.length === 0) {
     return [];
   }
