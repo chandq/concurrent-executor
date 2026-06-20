@@ -5,7 +5,7 @@
   "description": "A TypeScript concurrent task executor with timeout, retry, and execution control",
   "scripts": {
     "prepare": "husky install",
-    "build": "rollup  --bundleConfigAsCjs --config rollup.config.js",
+    "build": "rollup  --bundleConfigAsCjs --config rollup.config.js && npm run build:types",
     "build:types": "tsc --emitDeclarationOnly --declaration --outDir dist/types src/index.ts",
     "test:unit": "jest",
     "test": "jest --coverage",

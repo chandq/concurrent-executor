@@ -1,6 +1,5 @@
-[![Node.js CI](https://github.com/chandq/concurrent-executor/actions/workflows/node.js.yml/badge.svg)](https://github.com/chandq/concurrent-executor/actions/workflows/node.js.yml)
-
-[![license:MIT](https://img.shields.io/npm/l/vue.svg?sanitize=true)](https://github.com/chandq/concurrent-executor/blob/main/LICENSE.md)
+[![release status](https://github.com/chandq/concurrent-executor/actions/workflows/release.yml/badge.svg)](https://github.com/chandq/concurrent-executor/actions/workflows/release.yml)
+[![license:MIT](https://img.shields.io/npm/l/vue.svg?sanitize=true)](https://github.com/chandq/concurrent-executor/blob/main/LICENSE)
 [![codecov](https://codecov.io/gh/chandq/concurrent-executor/graph/badge.svg?token=VZ6TERPGI9)](https://codecov.io/gh/chandq/concurrent-executor)
 
 # ConcurrentExecutor
