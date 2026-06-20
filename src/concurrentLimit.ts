@@ -15,7 +15,6 @@ async function concurrentLimit<T>(
   if (typeof limit !== 'number' || limit <= 0) {
     throw new Error('limit must be a positive number');
   }
-
   // Validate each task is a function
   for (let i = 0; i < tasks.length; i++) {
     if (typeof tasks[i] !== 'function') {
